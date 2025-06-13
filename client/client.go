@@ -4,6 +4,7 @@ package client
 import (
 	"encoding/hex"
 	"fmt"
+
 	spi "github.com/alibabacloud-go/alibabacloud-gateway-spi/client"
 	models "github.com/alibabacloud-go/darabonba-openapi/v2/models"
 	openapiutil "github.com/alibabacloud-go/darabonba-openapi/v2/utils"
@@ -420,7 +421,7 @@ type Client struct {
 //
 // # Init client with Config
 //
-// @param config - config contains the necessary information to create a client
+// config - config contains the necessary information to create a client
 func NewClient(config *openapiutil.Config) (*Client, error) {
 	client := new(Client)
 	err := client.Init(config)
@@ -500,21 +501,21 @@ func (client *Client) Init(config *openapiutil.Config) (_err error) {
 //
 // # Encapsulate the request and invoke the network
 //
-// @param action - api name
+// action - api name
 //
-// @param version - product version
+// version - product version
 //
-// @param protocol - http or https
+// protocol - http or https
 //
-// @param method - e.g. GET
+// method - e.g. GET
 //
-// @param authType - authorization type e.g. AK
+// authType - authorization type e.g. AK
 //
-// @param bodyType - response body type e.g. String
+// bodyType - response body type e.g. String
 //
-// @param request - object of OpenApiRequest
+// request - object of OpenApiRequest
 //
-// @param runtime - which controls some details of call api, such as retry times
+// runtime - which controls some details of call api, such as retry times
 //
 // @return the response
 func (client *Client) DoRPCRequest(action *string, version *string, protocol *string, method *string, authType *string, bodyType *string, request *openapiutil.OpenApiRequest, runtime *dara.RuntimeOptions) (_result map[string]interface{}, _err error) {
@@ -722,23 +723,23 @@ func (client *Client) DoRPCRequest(action *string, version *string, protocol *st
 //
 // # Encapsulate the request and invoke the network
 //
-// @param action - api name
+// action - api name
 //
-// @param version - product version
+// version - product version
 //
-// @param protocol - http or https
+// protocol - http or https
 //
-// @param method - e.g. GET
+// method - e.g. GET
 //
-// @param authType - authorization type e.g. AK
+// authType - authorization type e.g. AK
 //
-// @param pathname - pathname of every api
+// pathname - pathname of every api
 //
-// @param bodyType - response body type e.g. String
+// bodyType - response body type e.g. String
 //
-// @param request - object of OpenApiRequest
+// request - object of OpenApiRequest
 //
-// @param runtime - which controls some details of call api, such as retry times
+// runtime - which controls some details of call api, such as retry times
 //
 // @return the response
 func (client *Client) DoROARequest(action *string, version *string, protocol *string, method *string, authType *string, pathname *string, bodyType *string, request *openapiutil.OpenApiRequest, runtime *dara.RuntimeOptions) (_result map[string]interface{}, _err error) {
@@ -914,23 +915,23 @@ func (client *Client) DoROARequest(action *string, version *string, protocol *st
 //
 // # Encapsulate the request and invoke the network with form body
 //
-// @param action - api name
+// action - api name
 //
-// @param version - product version
+// version - product version
 //
-// @param protocol - http or https
+// protocol - http or https
 //
-// @param method - e.g. GET
+// method - e.g. GET
 //
-// @param authType - authorization type e.g. AK
+// authType - authorization type e.g. AK
 //
-// @param pathname - pathname of every api
+// pathname - pathname of every api
 //
-// @param bodyType - response body type e.g. String
+// bodyType - response body type e.g. String
 //
-// @param request - object of OpenApiRequest
+// request - object of OpenApiRequest
 //
-// @param runtime - which controls some details of call api, such as retry times
+// runtime - which controls some details of call api, such as retry times
 //
 // @return the response
 func (client *Client) DoROARequestWithForm(action *string, version *string, protocol *string, method *string, authType *string, pathname *string, bodyType *string, request *openapiutil.OpenApiRequest, runtime *dara.RuntimeOptions) (_result map[string]interface{}, _err error) {
@@ -1107,21 +1108,21 @@ func (client *Client) DoROARequestWithForm(action *string, version *string, prot
 //
 // # Encapsulate the request and invoke the network
 //
-// @param action - api name
+// action - api name
 //
-// @param version - product version
+// version - product version
 //
-// @param protocol - http or https
+// protocol - http or https
 //
-// @param method - e.g. GET
+// method - e.g. GET
 //
-// @param authType - authorization type e.g. AK
+// authType - authorization type e.g. AK
 //
-// @param bodyType - response body type e.g. String
+// bodyType - response body type e.g. String
 //
-// @param request - object of OpenApiRequest
+// request - object of OpenApiRequest
 //
-// @param runtime - which controls some details of call api, such as retry times
+// runtime - which controls some details of call api, such as retry times
 //
 // @return the response
 func (client *Client) DoRequest(params *openapiutil.Params, request *openapiutil.OpenApiRequest, runtime *dara.RuntimeOptions) (_result map[string]interface{}, _err error) {
@@ -1355,21 +1356,21 @@ func (client *Client) DoRequest(params *openapiutil.Params, request *openapiutil
 //
 // # Encapsulate the request and invoke the network
 //
-// @param action - api name
+// action - api name
 //
-// @param version - product version
+// version - product version
 //
-// @param protocol - http or https
+// protocol - http or https
 //
-// @param method - e.g. GET
+// method - e.g. GET
 //
-// @param authType - authorization type e.g. AK
+// authType - authorization type e.g. AK
 //
-// @param bodyType - response body type e.g. String
+// bodyType - response body type e.g. String
 //
-// @param request - object of OpenApiRequest
+// request - object of OpenApiRequest
 //
-// @param runtime - which controls some details of call api, such as retry times
+// runtime - which controls some details of call api, such as retry times
 //
 // @return the response
 func (client *Client) Execute(params *openapiutil.Params, request *openapiutil.OpenApiRequest, runtime *dara.RuntimeOptions) (_result map[string]interface{}, _err error) {
@@ -1920,7 +1921,7 @@ func (client *Client) GetType() (_result *string, _err error) {
 //
 // # If the endpointRule and config.endpoint are empty, throw error
 //
-// @param config - config contains the necessary information to create a client
+// config - config contains the necessary information to create a client
 func (client *Client) CheckConfig(config *openapiutil.Config) (_err error) {
 	if dara.IsNil(client.EndpointRule) && dara.IsNil(config.Endpoint) {
 		_err = &ClientError{
@@ -1937,7 +1938,7 @@ func (client *Client) CheckConfig(config *openapiutil.Config) (_err error) {
 //
 // set gateway client
 //
-// @param spi - .
+// spi - .
 func (client *Client) SetGatewayClient(spi spi.ClientInterface) (_err error) {
 	client.Spi = spi
 	return _err
@@ -1947,7 +1948,7 @@ func (client *Client) SetGatewayClient(spi spi.ClientInterface) (_err error) {
 //
 // set RPC header for debug
 //
-// @param headers - headers for debug, this header can be used only once.
+// headers - headers for debug, this header can be used only once.
 func (client *Client) SetRpcHeaders(headers map[string]*string) (_err error) {
 	client.Headers = headers
 	return _err

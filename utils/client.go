@@ -98,9 +98,9 @@ func (hs *Sorter) Swap(i, j int) {
 //
 // # Convert all params of body other than type of readable into content
 //
-// @param body - source Model
+// body - source Model
 //
-// @param content - target Model
+// content - target Model
 //
 // @return void
 func Convert(body interface{}, content interface{}) {
@@ -124,7 +124,7 @@ func Convert(body interface{}, content interface{}) {
 //
 // # Get throttling param
 //
-// @param the - response headers
+// the - response headers
 //
 // @return time left
 func GetThrottlingTimeLeft(headers map[string]*string) (_result *int64) {
@@ -143,9 +143,9 @@ func GetThrottlingTimeLeft(headers map[string]*string) (_result *int64) {
 //
 // # Hash the raw data with signatureAlgorithm
 //
-// @param raw - hashing data
+// raw - hashing data
 //
-// @param signatureAlgorithm - the autograph method
+// signatureAlgorithm - the autograph method
 //
 // @return hashed bytes
 func Hash(raw []byte, signatureAlgorithm *string) (_result []byte) {
@@ -193,7 +193,7 @@ func GetNonce() (_result *string) {
 //
 // # Get the string to be signed according to request
 //
-// @param request - which contains signed messages
+// request - which contains signed messages
 //
 // @return the signed string
 func GetStringToSign(request *dara.Request) (_result *string) {
@@ -260,9 +260,9 @@ func getSignedStr(req *dara.Request, canonicalizedResource string) string {
 //
 // # Get signature according to stringToSign, secret
 //
-// @param stringToSign - the signed string
+// stringToSign - the signed string
 //
-// @param secret - accesskey secret
+// secret - accesskey secret
 //
 // @return the signature
 func GetROASignature(stringToSign *string, secret *string) (_result *string) {
@@ -276,7 +276,7 @@ func GetROASignature(stringToSign *string, secret *string) (_result *string) {
 //
 // # Parse filter into a form string
 //
-// @param filter - object
+// filter - object
 //
 // @return the string
 func ToForm(filter map[string]interface{}) (_result *string) {
@@ -376,7 +376,7 @@ func GetDateUTCString() (_result *string) {
 //
 // Parse filter into a object which's type is map[string]string
 //
-// @param filter - query param
+// filter - query param
 //
 // @return the object
 func Query(filter interface{}) (_result map[string]*string) {
@@ -399,11 +399,11 @@ func Query(filter interface{}) (_result map[string]*string) {
 //
 // # Get signature according to signedParams, method and secret
 //
-// @param signedParams - params which need to be signed
+// signedParams - params which need to be signed
 //
-// @param method - http method e.g. GET
+// method - http method e.g. GET
 //
-// @param secret - AccessKeySecret
+// secret - AccessKeySecret
 //
 // @return the signature
 func GetRPCSignature(signedParams map[string]*string, method *string, secret *string) (_result *string) {
@@ -416,9 +416,9 @@ func GetRPCSignature(signedParams map[string]*string, method *string, secret *st
 //
 // # Parse array into a string with specified style
 //
-// @param array - the array
+// array - the array
 //
-// @param prefix - the prefix string
+// prefix - the prefix string
 //
 // @return the string
 func ArrayToStringWithSpecifiedStyle(array interface{}, prefix *string, style *string) (_result *string) {
@@ -444,15 +444,15 @@ func ArrayToStringWithSpecifiedStyle(array interface{}, prefix *string, style *s
 //
 // # Get the authorization
 //
-// @param request - request params
+// request - request params
 //
-// @param signatureAlgorithm - the autograph method
+// signatureAlgorithm - the autograph method
 //
-// @param payload - the hashed request
+// payload - the hashed request
 //
-// @param accessKey - the accessKey string
+// accessKey - the accessKey string
 //
-// @param accessKeySecret - the accessKeySecret string
+// accessKeySecret - the accessKeySecret string
 //
 // @return authorization string
 func GetAuthorization(request *dara.Request, signatureAlgorithm *string, payload *string, accessKey *string, accessKeySecret *string) (_result *string) {
